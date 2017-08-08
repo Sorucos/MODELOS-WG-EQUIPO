@@ -26,17 +26,17 @@ SECRET_KEY = '3hai6a+p2b4lcdhte_82qq+wexo#7#5sj0*ke)bg#(-$0cq8qn'
 DEBUG = True
 
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'yourpassword'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'youremail@gmail.com'
+# EMAIL_HOST_PASSWORD = 'yourpassword'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
 
-ADMINS = (
-    ('You', 'you@email.com'),
-)
-MANAGERS = ADMINS
+# ADMINS = (
+#     ('You', 'you@email.com'),
+# )
+# MANAGERS = ADMINS
 
 
 ALLOWED_HOSTS =  []
@@ -141,12 +141,12 @@ LOGIN_URL ='/login/'
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_REDIRECT_URL = '/apli/'
 
-CORS_REPLACE_HTTPS_REFERER          = False
-HOST_SCHEME                         = "http://"
-SECURE_PROXY_SSCL_HEADER            = None
-SECURE_SSL_REDIRECT                 = False
-SESSION_COOKIE_SECURE               = False
-CSRF_COOKIE_SECURE                  = False
-SECURE_HSTS_SECONDS                 = None
-SECURE_HSTS_INCLUDE_SUBDOMAINS      = False
-SECURE_FRAME_DENY                   = False
+# CORS_REPLACE_HTTPS_REFERER          = False
+# HOST_SCHEME                         = "http://"
+# SECURE_PROXY_SSCL_HEADER            = None
+# SECURE_SSL_REDIRECT                 = False
+# SESSION_COOKIE_SECURE               = False
+# CSRF_COOKIE_SECURE                  = False
+# SECURE_HSTS_SECONDS                 = None
+# SECURE_HSTS_INCLUDE_SUBDOMAINS      = False
+# SECURE_FRAME_DENY                   = False
