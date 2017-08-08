@@ -9,13 +9,22 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
 
+ADMINS = (
+    ('You', 'you@email.com'),
+)
+MANAGERS = ADMINS
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -25,7 +34,8 @@ SECRET_KEY = '3hai6a+p2b4lcdhte_82qq+weismxo#7#5sj0*ke)bg#(-$0cq8qn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =  []
+
+ALLOWED_HOSTS =  ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -81,6 +91,11 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+#DATABASES['default']['CONN_MAX_AGE'] = 500
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -126,3 +141,13 @@ SECURE_SSL_REDIRECT = False
 LOGIN_URL ='/login/'
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_REDIRECT_URL = '/apli/'
+
+CORS_REPLACE_HTTPS_REFERER          = True
+HOST_SCHEME                         = "https://"
+SECURE_PROXY_SSCL_HEADER            = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT                 = True
+SESSION_COOKIE_SECURE               = True
+CSRF_COOKIE_SECURE                  = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS      = True
+SECURE_HSTS_SECONDS                 = 1000000
+SECURE_FRAME_DENY                   = True
