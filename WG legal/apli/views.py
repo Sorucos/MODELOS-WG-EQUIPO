@@ -1,26 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.core.urlresolvers import reverse_lazy
-#prueba isma usuario nuevo de jango
-from django.db.models import Q
-from django.shortcuts import redirect
-from django.contrib.auth import authenticate, login
+from django.core.urlresolvers import reverse_lazy #delete
+from django.http import HttpResponse #pdf
+from django.template.loader import get_template #pdf
 from django.views.generic import View
+from django.contrib.auth.decorators import login_required #login  def
+from django.contrib.auth.mixins import LoginRequiredMixin #login  viw 
+from django.db.models import Q #busqueda
+from .forms import UserForm, ClientCreateForm, RegisterForm
+from .utils import render_to_pdf #PDF
 from .models import Client, Persona, Proyecto
 
-#login logout viw y def
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-#prueba isma usuario nuevo de jango
-from .forms import UserForm
 
-from .forms import ClientCreateForm # de form se mporta cliente
-from .forms import RegisterForm
-from .utils import render_to_pdf #created in step 4
-
-#PDF
-from django.http import HttpResponse
-from django.template.loader import get_template
 
 
 

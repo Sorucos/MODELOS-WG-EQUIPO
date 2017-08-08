@@ -16,7 +16,7 @@ urlpatterns = [
 
     url(r'^busca/$', views.busca, name='busca'),                                                    # /busca/
 
-        # /proyecto/new/ TEST proyecto
+    # /proyecto/new/ TEST proyecto
     url(r'^proyecto/new/$', views.ProyectoCreate.as_view(), name='proyecto_new'),
 
     # /proyecto/1/update/
